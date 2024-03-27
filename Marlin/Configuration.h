@@ -60,7 +60,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(DIGA-Tech, ASWX1 v1.0)" // Who made the changes.        // DIGA-Tech:
+#define STRING_CONFIG_H_AUTHOR "(DIGA-Tech + ANSLO, AGenius v1.0)" // Who made the changes.        // DIGA-Tech: ANSLO
 #define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)        // DIGA-Tech:
 
 /**
@@ -135,7 +135,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Artillery Sidewinder X1"      // DIGA-Tech:
+#define CUSTOM_MACHINE_NAME "Artillery Genius"      // ANSLO
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -667,10 +667,10 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    // Artillery Sidewinder X1                             // DIGA-Tech:
-    #define DEFAULT_Kp 14.58                               // DIGA-Tech:
-    #define DEFAULT_Ki  1.14                               // DIGA-Tech:
-    #define DEFAULT_Kd 46.57                               // DIGA-Tech:
+    // Artillery Genius                                     // ANSLO
+    #define DEFAULT_Kp 9.31                                 // ANSLO
+    #define DEFAULT_Ki 0.57                                 // ANSLO
+    #define DEFAULT_Kd 37.76                                // ANSLO
 
     //#define DEFAULT_Kp  22.20                            // DIGA-Tech:
     //#define DEFAULT_Ki   1.08                            // DIGA-Tech:
@@ -755,10 +755,10 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Print Bed PID debug data to the serial port.
 
-  // Artillery Sidewinder X1                               // DIGA-Tech:
-  #define DEFAULT_bedKp 244.21                             // DIGA-Tech:
-  #define DEFAULT_bedKi  45.87                             // DIGA-Tech:
-  #define DEFAULT_bedKd 325.08                             // DIGA-Tech:
+  // Artillery Genius
+  #define DEFAULT_bedKp 92.46                              // ANSLO
+  #define DEFAULT_bedKi 16.12                              // ANSLO
+  #define DEFAULT_bedKd 132.55                              // ANSLO
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
@@ -1185,8 +1185,7 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 200, 200, 20, 40 }                     // DIGA-Tech: decreased values
-//#define DEFAULT_MAX_FEEDRATE          { 300, 300, 50, 40 }                     // Artillery: default values
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 50, 40 }                     // ALSLO Artillery: default values
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1214,8 +1213,7 @@
  *   M204 R    Retract Acceleration
  *   M204 T    Travel Acceleration
  */
-#define DEFAULT_ACCELERATION          1000     // X, Y, Z and E acceleration for printing moves              // DIGA-Tech: increased value
-//#define DEFAULT_ACCELERATION          800     // X, Y, Z and E acceleration for printing moves               // Artillery: default values
+#define DEFAULT_ACCELERATION          800     // X, Y, Z and E acceleration for printing moves               // ANSLO Artillery: default values
 #define DEFAULT_RETRACT_ACCELERATION  10000   // E acceleration for retracts                                 // DIGA-Tech:
 #define DEFAULT_TRAVEL_ACCELERATION   2000    // X, Y, Z acceleration for travel (non printing) moves        // DIGA-Tech:
 
@@ -1247,7 +1245,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK   10.0  // May be used by Linear Advance       // DIGA-Tech:
+#define DEFAULT_EJERK   5.0  // May be used by Linear Advance       // ANSLO
 
 /**
  * Junction Deviation Factor
@@ -1270,7 +1268,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION                             // DIGA-Tech:
+#define S_CURVE_ACCELERATION                             // ANSLO
 
 //===========================================================================
 //============================= Z Probe Options =============================
@@ -1706,16 +1704,16 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 300                                     // DIGA-Tech:
-#define Y_BED_SIZE 300                                     // DIGA-Tech:
+#define X_BED_SIZE 220                                     // ANSLO
+#define Y_BED_SIZE 220                                     // ANSLO
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
-#define X_MIN_POS -3                                       // DIGA-Tech:
-#define Y_MIN_POS -3                                       // DIGA-Tech:
+#define X_MIN_POS 0                                       // ANSLO
+#define Y_MIN_POS -5                                       // ANSLO
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 400                                      // DIGA-Tech:
+#define Z_MAX_POS 250                                      // ANSLO
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
 //#define J_MIN_POS 0

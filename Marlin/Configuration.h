@@ -1245,7 +1245,7 @@
   #endif
 #endif
 
-#define DEFAULT_EJERK   5.0  // May be used by Linear Advance       // ANSLO
+#define DEFAULT_EJERK   10.0  // May be used by Linear Advance       // ANSLO
 
 /**
  * Junction Deviation Factor
@@ -1268,7 +1268,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-#define S_CURVE_ACCELERATION                             // ANSLO
+//#define S_CURVE_ACCELERATION                             // DIGA-Tech:
 
 //===========================================================================
 //============================= Z Probe Options =============================
